@@ -52,9 +52,8 @@ $(document).ready(function(){
     let city = response.city;
     let state = response.region;
     getWeatherData(lat, lon, city, state);
-
-
-  });
+    getForecast(lat, lon, city, state);
+  }); //end locationdata then
 
 
 
@@ -74,26 +73,61 @@ $(document).ready(function(){
       document.querySelector('.temp').innerHTML = tempF + '&deg;';
       document.querySelector('#weatherStatus').innerText = response.weather[0].main;
 
-      //let sunset = new Date (response.sys.sunset * 1000);
-      //let sunrise = new Date (response.sys.sunrise * 1000);
+      //put date in and let the date object translate from unix to an actual time
+      let sunset = new Date (response.sys.sunset * 1000);
+      let sunrise = new Date (response.sys.sunrise * 1000);
+      let sunriseSuffix = checkSuffix(sunrise);
+      let sunsetSuffix = checkSuffix(sunset);
+      //create the string for sunrise and sunset
+      let sunsetString = `Sunset: ${sunsetSuffix[0]}:${sunset.getMinutes()}${sunsetSuffix[1]}`;
+      let sunriseString = `Sunrise: ${sunriseSuffix[0]}:${sunrise.getMinutes()}${sunriseSuffix[1]}`;
+      //and put them in the document
+      document.querySelector('.sunrise').innerText = sunriseString;
+      document.querySelector('.sunset').innerText = sunsetString;
 
-      //let sunsetString = `Sunset: ${sunset.getHours()}:${sunset.getMinutes()}`;
-
-      //let sunriseString = `Sunrise: ${sunrise.getHours()}:${sunrise.getMinutes()}`;
-
-
-      //document.querySelector('#sunrise').innerText = sunriseString;
-      //document.querySelector('#sunset').innerText = sunsetString;
-
+      //get and put in humidity and wind
+      document.querySelector('.humidity').innerText = 'Humidity: ' + response.main.humidity + '%';
+      document.querySelector('.wind').innerText = 'Wind: ' + mSecToMPH(response.wind.speed) + 'mph ' + degreesToDir(response.wind.deg);
 
 
     }); //end weather data then
    } //end get weather data
 
+   function getForecast(lat, lon, city, state) { //function to get 5 day forecast
+     let weatherAPI = 'https://api.openweathermap.org/data/2.5/forecast?';
+     let apiKEY = '13467721f3c66a39a0fab56acefa3531';
+     let forecastData = $.getJSON(`${weatherAPI}lat=${lat}&lon=${lon}&units=imperial&APPID=${apiKEY}`);
+
+     forecastData.then(function(response, status) {
+       console.log('forecast', response);
+     }); // end forecastdata then
+   }// end getforecast
+
     function kelvToFare(kelvin) {
     return (9/5*(kelvin-273))+32;
-  } //end kelvtofare
+    } //end kelvtofare
 
-});
+    function checkSuffix(date) { //function that takes in a take and spits out the correct hour and suffix
+      if(date.getHours()>12) {
+        return [date.getHours()-12, 'pm'];
+      } else {
+        return [date.getHours(), 'am'];
+      }
+    } // end check suffix
+
+    function degreesToDir(deg) { //function to conver from degrees to cardinal directions
+      let result = Math.floor((deg/22.5)+0.5); //with 16 directions, theres a direction change every 22.5 degrees.
+      let direction = ["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+      // so with 16 directions, we simply divide degrees by 22.5, round it, and take the result of val mod 16
+      return direction[(result%16)];
+    } //end degreesToDir
+
+    function mSecToMPH(msec) { //function to translate from meters/second to miles/hr
+      let result = msec / 1609.34 * 60 * 60;
+      return Math.round(result);
+    }
+
+
+}); //end window.onload
 
 document.querySelector('.date-header-cont p').innerText = todaysDate;
