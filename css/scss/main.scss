@@ -2,3 +2,21 @@
 @import "content.scss";
 @import "universal.scss";
 @import "mixins.scss";
+
+body {
+  font-family: 'Comfortaa', cursive;
+}
+
+.date-header-cont p {
+  font-size: 2em;
+}
+
+.icon-cont {
+  height: 50px;
+  width: 50px;
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}

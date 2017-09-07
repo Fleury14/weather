@@ -1,3 +1,5 @@
+@import "vars.scss";
+
 html, body {
   height:100%;
   width:100%;
@@ -58,14 +60,13 @@ html, body {
 // ----------------------------------------
 // fonts
 
-@import url('https://fonts.googleapis.com/css?family=Lato|Permanent+Marker');
-
-.marker {
-  font-family: 'Permanent Marker', cursive;
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Comfortaa');
+.architect {
+  font-family: 'Architects Daughter', cursive;
 }
 
-.lato {
-  font-family: 'Lato', sans-serif;
+.comf {
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .pink-floyd {

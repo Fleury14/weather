@@ -4,12 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Weather page</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <header>
+    <div class="date-header-cont">
+      <p class="architect text-center"></p>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-push-4 flex flex-column justify-center align-center"><!--Begin Middle col -->
+        <p class="city"></p>
+        <div class="icon-cont"><img src="" alt="" class="img-responsive weather-icon"></div>
+        <p class="temp xxl-font"></p>
+        <p id="weatherStatus"></p>
+      </div> <!-- End middle col -->
+      <div class="col-sm-4">
+        <p>Sunrise</p>
+        <p>sunset</p>
+      </div>
+    </div> <!-- end row -->
+  </div> <!-- end container -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/script.js"></script>
