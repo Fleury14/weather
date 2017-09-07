@@ -1,0 +1,231 @@
+html, body {
+  height:100%;
+  width:100%;
+  margin:0px;
+  padding:0px;
+}
+
+// --------------------------------------
+// colors
+.primary-color{
+  color:$black;
+}
+
+.secondary-color{
+  color:$white;
+}
+
+// -----------------------------------------
+// bg colors
+.primary-bg-color{
+  background-color:$primary-color;
+}
+
+.secondary-bg-color{
+  background-color:$white;
+}
+
+// --------------------------------------
+// heights
+.xs-height{
+  height:$xs-height;
+}
+
+.sm-height{
+  height:$sm-height;
+}
+
+.md-height{
+  height:$md-height;
+}
+
+.lg-height{
+  height:$lg-height;
+}
+
+.xl-height{
+  height:$xl-height;
+}
+
+.full-vh{
+  height:100vh;
+}
+
+.hundred-height {
+  height: 100%;
+}
+
+// ----------------------------------------
+// fonts
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Permanent+Marker');
+
+.marker {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.pink-floyd {
+  font-family:'pink-floyd', 'cursive';
+}
+// ------------------------------------------
+// font size
+.xs-font{
+  font-size:$xs-font;
+}
+
+.sm-font{
+  font-size:$sm-font;
+}
+
+.md-font{
+  font-size:$md-font;
+}
+
+.lg-font{
+  font-size:$lg-font;
+}
+
+.xl-font{
+  font-size:$xl-font;
+}
+
+.xxl-font {
+  font-size:$xxl-font;
+}
+// --------------------------------------------
+// display properties
+.display-block{
+  display:block;
+}
+
+.display-inline-block{
+  display:inline-block;
+}
+
+.display-none{
+  display:none;
+}
+
+// -----------------------------------------
+// margin / padding adjust
+.margin-null{
+  margin:0;
+}
+.padding-null{
+  padding:0;
+}
+// -----------------------------------------
+// flex box properties
+.fill{
+  height:100%;
+  width:100%;
+}
+
+.flex {
+  display:flex;
+}
+
+.flex-row{
+  flex-direction:row;
+}
+
+.flex-column{
+  flex-direction:column;
+}
+
+.justify-start{
+  justify-content:flex-start
+}
+
+.justify-end{
+  justify-content:flex-end;
+}
+
+.justify-center{
+  justify-content:center;
+}
+
+.justify-space-around{
+  justify-content:space-around;
+}
+
+.justify-space-between{
+  justify-content:space-between;
+}
+
+.align-start {
+  align-items:flex-start;
+}
+
+.align-end {
+  align-items:flex-end;
+}
+
+.align-center {
+  align-items:center;
+}
+
+.align-space-around {
+  align-items:space-around;
+}
+
+.align-space-between {
+  align-items:space-between;
+}
+
+// --------------------------------
+// position properties
+.position-relative{
+  position:relative;
+}
+
+.position-fixed{
+  position:fixed;
+}
+
+.position-absolute{
+  position:absolute;
+}
+
+.top-0{
+  top:0px;
+}
+
+.bottom-0{
+  bottom:0px;
+}
+
+.left-0{
+  left:0px;
+}
+
+.right-0{
+  right:0px;
+}
+
+// ----------------------------------------------
+// image properrties
+.img-fill {
+  background-size:cover;
+  background-position:center;
+}
+
+.attatchment-fixed {
+  background-attachment: fixed;
+}
+
+// ---------------------------------------------
+//  visibility
+.hidden{
+  visibility:hidden;
+}
+
+/* cursor pointers */
+
+.pointer {
+  cursor: pointer;
+}

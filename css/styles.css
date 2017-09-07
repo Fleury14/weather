@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Permanent+Marker");
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px; }
+
+.primary-color {
+  color: #000000; }
+
+.secondary-color {
+  color: #fff; }
+
+.primary-bg-color {
+  background-color: #550055; }
+
+.secondary-bg-color {
+  background-color: #fff; }
+
+.xs-height {
+  height: 50px; }
+
+.sm-height {
+  height: 100px; }
+
+.md-height {
+  height: 150px; }
+
+.lg-height {
+  height: 250px; }
+
+.xl-height {
+  height: 500px; }
+
+.full-vh {
+  height: 100vh; }
+
+.hundred-height {
+  height: 100%; }
+
+.marker {
+  font-family: 'Permanent Marker', cursive; }
+
+.lato {
+  font-family: 'Lato', sans-serif; }
+
+.pink-floyd {
+  font-family: 'pink-floyd', 'cursive'; }
+
+.xs-font {
+  font-size: 0.5em; }
+
+.sm-font {
+  font-size: 1em; }
+
+.md-font {
+  font-size: 1.25em; }
+
+.lg-font {
+  font-size: 1.5em; }
+
+.xl-font {
+  font-size: 2em; }
+
+.xxl-font {
+  font-size: 2.5em; }
+
+.display-block {
+  display: block; }
+
+.display-inline-block {
+  display: inline-block; }
+
+.display-none {
+  display: none; }
+
+.margin-null {
+  margin: 0; }
+
+.padding-null {
+  padding: 0; }
+
+.fill {
+  height: 100%;
+  width: 100%; }
+
+.flex {
+  display: flex; }
+
+.flex-row {
+  flex-direction: row; }
+
+.flex-column {
+  flex-direction: column; }
+
+.justify-start {
+  justify-content: flex-start; }
+
+.justify-end {
+  justify-content: flex-end; }
+
+.justify-center {
+  justify-content: center; }
+
+.justify-space-around {
+  justify-content: space-around; }
+
+.justify-space-between {
+  justify-content: space-between; }
+
+.align-start {
+  align-items: flex-start; }
+
+.align-end {
+  align-items: flex-end; }
+
+.align-center {
+  align-items: center; }
+
+.align-space-around {
+  align-items: space-around; }
+
+.align-space-between {
+  align-items: space-between; }
+
+.position-relative {
+  position: relative; }
+
+.position-fixed {
+  position: fixed; }
+
+.position-absolute {
+  position: absolute; }
+
+.top-0 {
+  top: 0px; }
+
+.bottom-0 {
+  bottom: 0px; }
+
+.left-0 {
+  left: 0px; }
+
+.right-0 {
+  right: 0px; }
+
+.img-fill {
+  background-size: cover;
+  background-position: center; }
+
+.attatchment-fixed {
+  background-attachment: fixed; }
+
+.hidden {
+  visibility: hidden; }
+
+/* cursor pointers */
+.pointer {
+  cursor: pointer; }
+
+/*# sourceMappingURL=styles.css.map */
