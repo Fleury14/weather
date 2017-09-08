@@ -87,7 +87,7 @@ $(document).ready(function(){
 
       //get and put in humidity and wind
       document.querySelector('.humidity').innerText = 'Humidity: ' + response.main.humidity + '%';
-      document.querySelector('.wind').innerText = 'Wind: ' + mSecToMPH(response.wind.speed) + 'mph ' + degreesToDir(response.wind.deg);
+      document.querySelector('.wind').innerText = 'Wind: ' + mSecToMPH(response.wind.speed) + ' mph ' + degreesToDir(response.wind.deg);
 
 
     }); //end weather data then
@@ -116,6 +116,7 @@ $(document).ready(function(){
     } // end check suffix
 
     function degreesToDir(deg) { //function to conver from degrees to cardinal directions
+      if(deg == undefined) {return '';} //if there's no direction, return nothing
       let result = Math.floor((deg/22.5)+0.5); //with 16 directions, theres a direction change every 22.5 degrees.
       let direction = ["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
       // so with 16 directions, we simply divide degrees by 22.5, round it, and take the result of val mod 16

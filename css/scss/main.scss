@@ -5,10 +5,31 @@
 
 body {
   font-family: 'Comfortaa', cursive;
+  background-color: $primary-color;
+  color: $secondary-color;
 }
 
 .date-header-cont p {
   font-size: 2em;
+  text-shadow: 1px 1px 1px #805c15;
+}
+
+.middle-box {
+  box-shadow: 3px 3px 3px $darker-blue;
+  border: 2px solid $dark-blue;
+  padding-top: 20px;
+  font-weight: 700;
+}
+
+.side-box {
+  @extend .middle-box;
+  height: 194px;
+}
+
+@media only screen and (max-width: 768px) {
+  .side-box {
+    height: 100%;
+  }
 }
 
 .icon-cont {

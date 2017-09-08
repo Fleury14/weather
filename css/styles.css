@@ -159,11 +159,26 @@ html, body {
   cursor: pointer; }
 
 body {
-  font-family: 'Comfortaa', cursive; }
+  font-family: 'Comfortaa', cursive;
+  background-color: #2e4272;
+  color: #aa8439; }
 
 .date-header-cont p {
-  font-size: 2em; }
+  font-size: 2em;
+  text-shadow: 1px 1px 1px #805c15; }
 
+.middle-box, .side-box {
+  box-shadow: 3px 3px 3px #061539;
+  border: 2px solid #162955;
+  padding-top: 20px;
+  font-weight: 700; }
+
+.side-box {
+  height: 194px; }
+
+@media only screen and (max-width: 768px) {
+  .side-box {
+    height: 100%; } }
 .icon-cont {
   height: 50px;
   width: 50px; }
