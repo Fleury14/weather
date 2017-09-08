@@ -41,3 +41,19 @@ body {
     width: 50px;
   }
 }
+
+.temp-button {
+  margin-top: 20px;
+  background-color: $light-blue;
+  border: 2px solid $dark-blue;
+  padding: 5px;
+  border-radius: 5%;
+
+  &:hover {
+    background-color: $lighter-blue;
+  }
+}
+
+footer div {
+  margin-top: 20px;
+}

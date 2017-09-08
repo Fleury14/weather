@@ -186,4 +186,16 @@ body {
     height: 50px;
     width: 50px; }
 
+.temp-button {
+  margin-top: 20px;
+  background-color: #4f628e;
+  border: 2px solid #162955;
+  padding: 5px;
+  border-radius: 5%; }
+  .temp-button:hover {
+    background-color: #7887ab; }
+
+footer div {
+  margin-top: 20px; }
+
 /*# sourceMappingURL=styles.css.map */

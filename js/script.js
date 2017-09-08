@@ -1,4 +1,6 @@
 let todaysDate = getTodaysDate();
+let currentUnit = 'F';
+let currentTemp = 0;
 
 function getTodaysDate() {
 
@@ -69,8 +71,8 @@ $(document).ready(function(){
       document.querySelector('.city').innerText = cityString; //put together a city, state string and put it in the html
       // put icon in next -- note: this is icon is dependent on owm hosting the icon
       document.querySelector('.weather-icon').src = `https://openweathermap.org/img/w/${response.weather[0].icon}.png`;
-      let tempF=Math.round(kelvToFare(response.main.temp));
-      document.querySelector('.temp').innerHTML = tempF + '&deg;';
+      currentTemp=Math.round(kelvToFare(response.main.temp));
+      document.querySelector('.temp').innerHTML = currentTemp + '&deg;F';
       document.querySelector('#weatherStatus').innerText = response.weather[0].main;
 
       //put date in and let the date object translate from unix to an actual time
@@ -131,4 +133,21 @@ $(document).ready(function(){
 
 }); //end window.onload
 
+function toggleUnitSwitch() { //function to toggle between farenheit and celsius
+  if(currentUnit == 'F') { //if its farenheit
+    currentTemp = Math.round((currentTemp-32) * 5/9); // change the temp
+    currentUnit = 'C'; //change the current unit
+    document.querySelector('.temp').innerHTML = currentTemp + '&deg;' + currentUnit; //redraw temp
+    document.querySelector('.temp-button').innerText = 'Convert to Farenheit'; // change button info
+  } else { //if it aint F, it can only be C
+    currentTemp = Math.round((currentTemp * 9/5) + 32); //convert..
+    currentUnit = 'F'; //..change unit..
+    document.querySelector('.temp').innerHTML = currentTemp + '&deg;' + currentUnit; //redraw temp
+    document.querySelector('.temp-button').innerText = 'Convert to Celsius'; // change button info
+  }
+}
+
+// add date to the top
 document.querySelector('.date-header-cont p').innerText = todaysDate;
+
+document.querySelector('.temp-button').addEventListener('click', toggleUnitSwitch);
