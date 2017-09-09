@@ -4,14 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta name="title" content="Small weather page">
+  <meta name="description" content="This page demonstrates API usage by parsing data from the openweathermap API into a webpage. This is one of my projects for my JS class.">
+  <meta name="keywords" content="J.R., Ruggiero, JS, Javascript, weather, openweathermap, API, assignment, Geekwise">
+  <meta name="author" content="J.R. Ruggiero">
+  <title>Weather page</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <header>
+    <div class="date-header-cont">
+      <p class="architect text-center"></p>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row position-relative">
+      <div class="col-sm-4 col-sm-push-4 flex flex-column justify-center align-center middle-box"><!--Begin Middle col -->
+        <p class="city"></p>
+        <div class="icon-cont"><img src="" alt="" class="img-responsive weather-icon"></div>
+        <p class="temp xxl-font"></p>
+        <p id="weatherStatus"></p>
+      </div> <!-- End middle col -->
+      <div class="col-sm-4 col-sm-pull-4 flex flex-column justify-center align-center side-box"><!-- Begin left column -->
+        <p class="sunrise"></p>
+        <p class="sunset"></p>
+      </div>
+      <div class="col-sm-4 flex flex-column justify-center align-center side-box"> <!-- begin right column -->
+        <p class="humidity"></p>
+        <p class="wind"></p>
+      </div> <!-- end right column -->
+    </div> <!-- end row -->
+    <div class="button-row flex justify-center">
+      <button class="temp-button">Convert to Celsius</button>
+    </div>
+    <p class="text-center xxl-font architect forecast-header">Forecast</p>
+    <div class="row forecast-row">
+      <div class="col-sm-3 col-xs-6" id="forecast1"></div>
+      <div class="col-sm-3 col-xs-6" id="forecast2"></div>
+      <div class="col-sm-3 col-xs-6" id="forecast3"></div>
+      <div class="col-sm-3 col-xs-6" id="forecast4"></div>
+    </div>
+  </div> <!-- end container -->
+  <footer>
+    <div>
+      <p class="architect text-center xxl-font">Page designed by J.R. Ruggiero</p>
+      <p class="architect sm-font text-center">Weather information provided by OpenWeatherMap API</p>
+    </div>
+  </footer>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

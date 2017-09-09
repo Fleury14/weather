@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato|Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Architects+Daughter|Comfortaa");
 html, body {
   height: 100%;
   width: 100%;
@@ -12,7 +12,7 @@ html, body {
   color: #fff; }
 
 .primary-bg-color {
-  background-color: #550055; }
+  background-color: #2e4272; }
 
 .secondary-bg-color {
   background-color: #fff; }
@@ -38,11 +38,11 @@ html, body {
 .hundred-height {
   height: 100%; }
 
-.marker {
-  font-family: 'Permanent Marker', cursive; }
+.architect {
+  font-family: 'Architects Daughter', cursive; }
 
-.lato {
-  font-family: 'Lato', sans-serif; }
+.comf {
+  font-family: 'Comfortaa', sans-serif; }
 
 .pink-floyd {
   font-family: 'pink-floyd', 'cursive'; }
@@ -157,5 +157,55 @@ html, body {
 /* cursor pointers */
 .pointer {
   cursor: pointer; }
+
+body {
+  font-family: 'Comfortaa', cursive;
+  background-color: #2e4272;
+  color: #aa8439; }
+
+.date-header-cont p {
+  font-size: 2em;
+  text-shadow: 1px 1px 1px #805c15; }
+
+.middle-box, .side-box {
+  box-shadow: 3px 3px 3px #061539;
+  border: 2px solid #162955;
+  padding-top: 20px;
+  font-weight: 700; }
+
+.side-box {
+  height: 194px; }
+
+@media only screen and (max-width: 768px) {
+  .side-box {
+    height: 100%; } }
+.icon-cont {
+  height: 50px;
+  width: 50px; }
+  .icon-cont img {
+    height: 50px;
+    width: 50px; }
+
+.temp-button {
+  margin-top: 20px;
+  background-color: #4f628e;
+  border: 2px solid #162955;
+  padding: 5px;
+  border-radius: 5%; }
+  .temp-button:hover {
+    background-color: #7887ab; }
+
+.forecast-header {
+  text-shadow: 2px 2px 2px #805c15; }
+
+.forecast-row {
+  box-shadow: 3px 3px 3px #061539; }
+  .forecast-row div {
+    border: 2px solid #162955;
+    padding-top: 10px;
+    margin-top: 10px; }
+
+footer div {
+  margin-top: 20px; }
 
 /*# sourceMappingURL=styles.css.map */

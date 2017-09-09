@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato|Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Architects+Daughter|Comfortaa");
 html, body {
   height: 100%;
   width: 100%;
@@ -12,7 +12,7 @@ html, body {
   color: #fff; }
 
 .primary-bg-color {
-  background-color: #550055; }
+  background-color: #2e4272; }
 
 .secondary-bg-color {
   background-color: #fff; }
@@ -38,11 +38,11 @@ html, body {
 .hundred-height {
   height: 100%; }
 
-.marker {
-  font-family: 'Permanent Marker', cursive; }
+.architect {
+  font-family: 'Architects Daughter', cursive; }
 
-.lato {
-  font-family: 'Lato', sans-serif; }
+.comf {
+  font-family: 'Comfortaa', sans-serif; }
 
 .pink-floyd {
   font-family: 'pink-floyd', 'cursive'; }
@@ -157,5 +157,18 @@ html, body {
 /* cursor pointers */
 .pointer {
   cursor: pointer; }
+
+body {
+  font-family: 'Comfortaa', cursive; }
+
+.date-header-cont p {
+  font-size: 2em; }
+
+.icon-cont {
+  height: 50px;
+  width: 50px; }
+  .icon-cont img {
+    height: 50px;
+    width: 50px; }
 
 /*# sourceMappingURL=main.css.map */
