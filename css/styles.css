@@ -195,6 +195,16 @@ body {
   .temp-button:hover {
     background-color: #7887ab; }
 
+.forecast-header {
+  text-shadow: 2px 2px 2px #805c15; }
+
+.forecast-row {
+  box-shadow: 3px 3px 3px #061539; }
+  .forecast-row div {
+    border: 2px solid #162955;
+    padding-top: 10px;
+    margin-top: 10px; }
+
 footer div {
   margin-top: 20px; }
 

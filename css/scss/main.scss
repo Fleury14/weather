@@ -26,6 +26,7 @@ body {
   height: 194px;
 }
 
+
 @media only screen and (max-width: 768px) {
   .side-box {
     height: 100%;
@@ -51,6 +52,20 @@ body {
 
   &:hover {
     background-color: $lighter-blue;
+  }
+}
+
+.forecast-header {
+  text-shadow: 2px 2px 2px #805c15;
+}
+
+.forecast-row {
+  box-shadow: 3px 3px 3px $darker-blue;
+
+  div {
+    border: 2px solid $dark-blue;
+    padding-top: 10px;
+    margin-top: 10px;
   }
 }
 

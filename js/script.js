@@ -1,6 +1,7 @@
 let todaysDate = getTodaysDate();
 let currentUnit = 'F';
 let currentTemp = 0;
+let globalForecastData;
 
 function getTodaysDate() {
 
@@ -102,6 +103,24 @@ $(document).ready(function(){
 
      forecastData.then(function(response, status) {
        console.log('forecast', response);
+       globalForecastData = response; //assign forecase data to global scope to allow unit switches.. sloppy, i know
+       response.list.forEach(function(el, index){ //go through each listing
+         console.log('el', el);
+         el.date = new Date(el.dt*1000); //put unix time in new date object for conversion
+         //create the string that will be appended
+         let forecastString = `${el.date.getMonth()}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round(el.main.temp)}&deg;`;
+         let newEntry = document.createElement('p');
+         newEntry.innerHTML = forecastString;
+         if(index<10) { //0-9 first column
+           document.querySelector('#forecast1').appendChild(newEntry);
+         } else if(index<20) { //10-19 second column
+           document.querySelector('#forecast2').appendChild(newEntry);
+         } else if(index<30) { //20-29 second column
+           document.querySelector('#forecast3').appendChild(newEntry);
+         } else { //everything else 4th column
+           document.querySelector('#forecast4').appendChild(newEntry);
+         } //end if
+       }); //end foreach
      }); // end forecastdata then
    }// end getforecast
 
@@ -139,13 +158,55 @@ function toggleUnitSwitch() { //function to toggle between farenheit and celsius
     currentUnit = 'C'; //change the current unit
     document.querySelector('.temp').innerHTML = currentTemp + '&deg;' + currentUnit; //redraw temp
     document.querySelector('.temp-button').innerText = 'Convert to Farenheit'; // change button info
+    //forecast changes
+    for(let i=1; i<5; i++) {//reset forecast elements
+        document.querySelector('#forecast' + i).innerHTML = '';
+    } //end for
+    globalForecastData.list.forEach(function(el, index){ //go through each listing
+      el.date = new Date(el.dt*1000); //put unix time in new date object for conversion
+      //create the string that will be appended
+      let forecastString = `${el.date.getMonth()}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round((el.main.temp-32)*5/9)}&deg;`;
+      let newEntry = document.createElement('p');
+      newEntry.innerHTML = forecastString;
+      if(index<10) { //0-9 first column
+        document.querySelector('#forecast1').appendChild(newEntry);
+      } else if(index<20) { //10-19 second column
+        document.querySelector('#forecast2').appendChild(newEntry);
+      } else if(index<30) { //20-29 second column
+        document.querySelector('#forecast3').appendChild(newEntry);
+      } else { //everything else 4th column
+        document.querySelector('#forecast4').appendChild(newEntry);
+      } //end if
+    }); //end foreach
+
   } else { //if it aint F, it can only be C
     currentTemp = Math.round((currentTemp * 9/5) + 32); //convert..
     currentUnit = 'F'; //..change unit..
     document.querySelector('.temp').innerHTML = currentTemp + '&deg;' + currentUnit; //redraw temp
     document.querySelector('.temp-button').innerText = 'Convert to Celsius'; // change button info
-  }
-}
+    //forecasr changes
+    //forecast changes
+    for(let i=1; i<5; i++) {//reset forecast elements
+        document.querySelector('#forecast' + i).innerHTML = '';
+    } //end for
+    globalForecastData.list.forEach(function(el, index){ //go through each listing
+      el.date = new Date(el.dt*1000); //put unix time in new date object for conversion
+      //create the string that will be appended
+      let forecastString = `${el.date.getMonth()}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round(el.main.temp)}&deg;`;
+      let newEntry = document.createElement('p');
+      newEntry.innerHTML = forecastString;
+      if(index<10) { //0-9 first column
+        document.querySelector('#forecast1').appendChild(newEntry);
+      } else if(index<20) { //10-19 second column
+        document.querySelector('#forecast2').appendChild(newEntry);
+      } else if(index<30) { //20-29 second column
+        document.querySelector('#forecast3').appendChild(newEntry);
+      } else { //everything else 4th column
+        document.querySelector('#forecast4').appendChild(newEntry);
+      } //end if
+    }); //end foreach
+  } // end f/c if else
+} //end function toggleUnitSwitch
 
 // add date to the top
 document.querySelector('.date-header-cont p').innerText = todaysDate;
