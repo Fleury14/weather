@@ -105,7 +105,7 @@ $(document).ready(function(){
        console.log('forecast', response);
        globalForecastData = response; //assign forecase data to global scope to allow unit switches.. sloppy, i know
        response.list.forEach(function(el, index){ //go through each listing
-         console.log('el', el);
+         // console.log('el', el);
          el.date = new Date(el.dt*1000); //put unix time in new date object for conversion
          //create the string that will be appended
          let forecastString = `${el.date.getMonth()+1}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round(el.main.temp)}&deg;`;
