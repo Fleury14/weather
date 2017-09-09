@@ -108,7 +108,7 @@ $(document).ready(function(){
          console.log('el', el);
          el.date = new Date(el.dt*1000); //put unix time in new date object for conversion
          //create the string that will be appended
-         let forecastString = `${el.date.getMonth()}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round(el.main.temp)}&deg;`;
+         let forecastString = `${el.date.getMonth()+1}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round(el.main.temp)}&deg;`;
          let newEntry = document.createElement('p');
          newEntry.innerHTML = forecastString;
          if(index<10) { //0-9 first column
@@ -165,7 +165,7 @@ function toggleUnitSwitch() { //function to toggle between farenheit and celsius
     globalForecastData.list.forEach(function(el, index){ //go through each listing
       el.date = new Date(el.dt*1000); //put unix time in new date object for conversion
       //create the string that will be appended
-      let forecastString = `${el.date.getMonth()}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round((el.main.temp-32)*5/9)}&deg;`;
+      let forecastString = `${el.date.getMonth()+1}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round((el.main.temp-32)*5/9)}&deg;`;
       let newEntry = document.createElement('p');
       newEntry.innerHTML = forecastString;
       if(index<10) { //0-9 first column
@@ -192,7 +192,7 @@ function toggleUnitSwitch() { //function to toggle between farenheit and celsius
     globalForecastData.list.forEach(function(el, index){ //go through each listing
       el.date = new Date(el.dt*1000); //put unix time in new date object for conversion
       //create the string that will be appended
-      let forecastString = `${el.date.getMonth()}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round(el.main.temp)}&deg;`;
+      let forecastString = `${el.date.getMonth() + 1}/${el.date.getDate()} ${el.date.getHours()}:00 -- ${Math.round(el.main.temp)}&deg;`;
       let newEntry = document.createElement('p');
       newEntry.innerHTML = forecastString;
       if(index<10) { //0-9 first column
