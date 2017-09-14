@@ -81,9 +81,12 @@ $(document).ready(function(){
       let sunrise = new Date (response.sys.sunrise * 1000);
       let sunriseSuffix = checkSuffix(sunrise);
       let sunsetSuffix = checkSuffix(sunset);
+      let sunriseminutes = sunrise.getMinutes()<10 ? '0' + sunrise.getMinutes() : sunrise.getMinutes();
+      let sunsetminutes = sunset.getMinutes()<10 ? '0' + sunset.getMinutes() : sunset.getMinutes();
+      console.log(sunsetminutes);
       //create the string for sunrise and sunset
-      let sunsetString = `Sunset: ${sunsetSuffix[0]}:${sunset.getMinutes()}${sunsetSuffix[1]}`;
-      let sunriseString = `Sunrise: ${sunriseSuffix[0]}:${sunrise.getMinutes()}${sunriseSuffix[1]}`;
+      let sunsetString = `Sunset: ${sunsetSuffix[0]}:${sunsetminutes}${sunsetSuffix[1]}`;
+      let sunriseString = `Sunrise: ${sunriseSuffix[0]}:${sunriseminutes}${sunriseSuffix[1]}`;
       //and put them in the document
       document.querySelector('.sunrise').innerText = sunriseString;
       document.querySelector('.sunset').innerText = sunsetString;
